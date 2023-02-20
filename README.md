@@ -79,8 +79,7 @@ pagination.
   - it is prevented that the page index could go higher than the max page index or below 1
   - the page index is increased / decreased
   - the `fetchCharacters` function is called
-- Update the pagination display each time characters are fetched to show the current page index and
-  the current max page index.
+- Update the pagination display each time characters are fetched to show the current page index and the current max page index.
 
 ### The Search Bar
 
