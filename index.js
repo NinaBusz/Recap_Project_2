@@ -43,6 +43,8 @@ async function fetchCharacters() {
 
 fetchCharacters();
 
+// Pagination
+
 function gotToPrevPage() {
   if (page > 1) {
     page--;
@@ -66,3 +68,22 @@ function updatePagination() {
 prevButton.addEventListener("click", gotToPrevPage);
 
 nextButton.addEventListener("click", gotToNextPage);
+
+//Search Bar
+
+searchBar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const searchData = new FormData(event.target);
+  const data = Object.fromEntries(searchData);
+});
+
+async function fetchSearchData(search) {
+  const data = await fetch(
+    `https://rickandmortyapi.com/api/character?page=${page}&name=${searchQuery}`
+  );
+  const characters = await data.json();
+  characters.forEach((person) => {
+    const personElement = createCharacterCard(person);
+    cardContainer.append(personElement);
+  });
+}
