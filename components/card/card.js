@@ -3,7 +3,6 @@ console.clear();
 export function createCharacterCard({ image, name, status, type, episode }) {
   const characterCard = document.createElement("li");
   characterCard.classList.add("card");
-  //cardContainer.append(characterCard);
   characterCard.innerHTML = `
   
   
